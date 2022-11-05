@@ -3,9 +3,9 @@
   font-family: sans-serif;
   text-align: center;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items:center;
   background-color: darkslategrey;
   padding: 50px;
 }
@@ -42,3 +42,4 @@
   border-top-right-radius: 25px;
   border-bottom-left-radius: 25px;
 }
+

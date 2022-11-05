@@ -2,6 +2,7 @@
 import './App.css';
 import React ,{useState} from 'react';
 import Progress from './Progress';
+import Done from './Done';
 
 function App() {
   const [note, setNote] = useState();
@@ -52,6 +53,7 @@ function App() {
                 onChange={()=>{
                     
                     setInpro(item);
+                    handleDelete();
                 
                 }}
               ></input>
@@ -63,8 +65,9 @@ function App() {
         ))}
       </div>
       </div>
-      <Progress props={inpro}/>
-      <div className="done"></div>
+      <div><Progress props={inpro}/></div>
+      
+      
      
     </div>
   );
