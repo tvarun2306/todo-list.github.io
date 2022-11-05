@@ -1,11 +1,13 @@
 
 import './App.css';
 import React ,{useState} from 'react';
+import Progress from './Progress';
 
 function App() {
   const [note, setNote] = useState();
   const [noteList, setNoteList] = useState([]);
-  const [check, setCheck] = useState(false);
+  const [inpro, setInpro] = useState();
+  
 
   function handleNoteList() {
     const noteListtemp = [...noteList];
@@ -19,24 +21,16 @@ function App() {
     setNoteList(noteListTemp);
   }
 
-  // function handleNote(e) {
-  //   setNote(e.target.value);
-  // }
-
-  function handleCheck() {
-    setCheck(true);
-    if (check === true) {
-      return <button>del</button>;
-    }
-  }
-
   return (
     <div className="App">
+    
+      <div class="todo">
       <h1 class="heading">To Do List-</h1>
       <input
         class="input"
         type="text"
         value={note}
+
         onChange={(e) => {
           setNote(e.target.value);
         }}
@@ -55,7 +49,11 @@ function App() {
               <input
                 class="checkBox"
                 type="checkbox"
-                onChange={handleCheck}
+                onChange={()=>{
+                    
+                    setInpro(item);
+                
+                }}
               ></input>
               <button id="delete" onClick={handleDelete}>
                 Delete
@@ -64,6 +62,10 @@ function App() {
           </div>
         ))}
       </div>
+      </div>
+      <div class="in-progress">Progress<Progress props={inpro}/></div>
+      <div class="done"></div>
+     
     </div>
   );
 }
