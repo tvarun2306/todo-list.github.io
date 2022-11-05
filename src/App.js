@@ -24,10 +24,10 @@ function App() {
   return (
     <div className="App">
     
-      <div class="todo">
-      <h1 class="heading">To Do List-</h1>
+      <div className="todo">
+      <h1 className="heading">To Do List-</h1>
       <input
-        class="input"
+        className="input"
         type="text"
         value={note}
 
@@ -37,9 +37,9 @@ function App() {
       ></input>
 
       <button onClick={handleNoteList}>Add Note</button>
-      <div class="noteList">
+      <div className="noteList">
         {noteList.map((item, index) => (
-          <div class="listElement">
+          <div className="listElement">
             <div>
               {" "}
               {index + 1 + ". "}
@@ -47,7 +47,7 @@ function App() {
             </div>
             <div>
               <input
-                class="checkBox"
+                className="checkBox"
                 type="checkbox"
                 onChange={()=>{
                     
@@ -63,8 +63,8 @@ function App() {
         ))}
       </div>
       </div>
-      <div class="in-progress">Progress<Progress props={inpro}/></div>
-      <div class="done"></div>
+      <Progress props={inpro}/>
+      <div className="done"></div>
      
     </div>
   );

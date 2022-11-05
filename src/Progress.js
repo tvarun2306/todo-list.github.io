@@ -1,18 +1,27 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 
 function Progress({props}){
 
-    // const [pro,setPro]=useState(props);
+    
     const [proList,setProList]=useState([]);
     
-    const proListTemp=[...proList];
+    useEffect(handleProList,[props])
+    function handleProList(){
+        const proListTemp=[...proList];
     proListTemp.push(props);
     setProList(proListTemp);
 
 
-    return(<div class="progress">
+    }
+    
+
+    return(<div className="progress">
         <h3>Progrss List</h3>
-     {proList}
+        <div>
+            {handleProList}
+            {proList.map((item,index)=><div>{item}</div>)}
+ 
+        </div>
 
     </div>)
 }
