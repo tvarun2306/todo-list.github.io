@@ -1,10 +1,13 @@
 import React,{useState,useEffect} from 'react';
 import Done from './Done';
+import ChildTask from './ChildTask';
+
 function Progress({props}){
 
     
     const [proList,setProList]=useState([]);
     
+  
     useEffect(handleProList,[props])
 
     function handleProList(){
@@ -27,26 +30,40 @@ function Progress({props}){
         const doneListTemp =[...doneList];
         doneListTemp.push(item);
         setDoneList(doneListTemp);
+        
     }
-    
 
-    return(<div className="progress">
+
+
+    return(<div className="pro-done">
+
+        <div className='progress'>
         <h1 className='progress-heading heading'>Progrss List</h1>
         <div>
             {handleProList}
             {proList.map((item,index)=><div>
                 <div>{index+1}</div>
                 <div>{item}</div>
+                <ChildTask/>
+
                 <input type="checkbox"
                 onChange={()=>{addDoneList(item)}}
                 ></input>
-                <button >Add Tasks</button>
+                
                 <button  onClick={deleteProList}>Delete</button>
                 </div>)}
  
         </div>
+        
+            
+        </div>
 
         <Done props1={doneList}/>
+
+        
+
+
+        
 
     </div>)
 }

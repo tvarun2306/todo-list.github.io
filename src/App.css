@@ -5,9 +5,9 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items:center;
+  
   background-color: darkslategrey;
-  padding: 50px;
+  padding-top: 50px;
 }
 
 .input {
@@ -20,11 +20,12 @@
   width: 350px;
   background-color: goldenrod;
   padding: 10px;
+  
 }
 .listElement {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content:center;
 }
 .checkBox {
   background-color: khaki;
@@ -36,10 +37,32 @@
 }
 
 .heading{
-  width: 300px;
+  width: 250px;
   background-color:burlywood;
   border: 2px solid brown;
   border-top-right-radius: 25px;
   border-bottom-left-radius: 25px;
+}
+
+.pro-done{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 50px;
+}
+
+.progress{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 50px;
+  
+}
+.done{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 50px;
+  
 }
 
